@@ -38,7 +38,7 @@ func TestCountdown(t *testing.T) {
 		buffer := &bytes.Buffer{}
 		spySleeper := &SpyeSleeper{}
 
-		Countdown(buffer, spySleeper)
+		CountdownWithOpts(buffer, spySleeper)
 
 		got := buffer.String()
 		want := `3
@@ -53,7 +53,7 @@ Go!`
 
 	t.Run("sleep before every print", func(t *testing.T) {
 		spySleepPrinter := &SpyCountdownOperations{}
-		Countdown(spySleepPrinter, spySleepPrinter)
+		CountdownWithOpts(spySleepPrinter, spySleepPrinter)
 
 		want := []string{
 			sleep,

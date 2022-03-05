@@ -39,7 +39,7 @@ func (s *SpyTime) Sleep(duration time.Duration) {
 	s.durationSlept = duration
 }
 
-func Countdown(out io.Writer, sleeper Sleeper) {
+func CountdownWithOpts(out io.Writer, sleeper Sleeper) {
 	for i := countdownStart; i > 0; i-- {
 		sleeper.Sleep()
 		fmt.Fprintln(out, i)
@@ -48,7 +48,11 @@ func Countdown(out io.Writer, sleeper Sleeper) {
 	fmt.Fprint(out, finalWord)
 }
 
-func main() {
+func Countdown() {
 	sleeper := &ConfigurableSleeper{1 * time.Second, time.Sleep}
-	Countdown(os.Stdout, sleeper)
+	CountdownWithOpts(os.Stdout, sleeper)
+}
+
+func main() {
+	Countdown()
 }
