@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-type SpyeSleeper struct {
+type SpySleeper struct {
 	Calls int
 }
 

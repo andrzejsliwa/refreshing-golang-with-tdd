@@ -1,6 +1,6 @@
 module golearning
 
-go 1.17
+go 1.18
 
 require (
 	github.com/kisielk/errcheck v1.6.0 // indirect
