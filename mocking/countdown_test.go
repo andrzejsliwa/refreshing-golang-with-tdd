@@ -11,7 +11,7 @@ type SpySleeper struct {
 	Calls int
 }
 
-func (s *SpyeSleeper) Sleep() {
+func (s *SpySleeper) Sleep() {
 	s.Calls++
 }
 
@@ -36,7 +36,7 @@ const (
 func TestCountdown(t *testing.T) {
 	t.Run("prints 3 to Go!", func(t *testing.T) {
 		buffer := &bytes.Buffer{}
-		spySleeper := &SpyeSleeper{}
+		spySleeper := &SpySleeper{}
 
 		CountdownWithOpts(buffer, spySleeper)
 
