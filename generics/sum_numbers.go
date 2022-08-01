@@ -1,7 +1,17 @@
 package sum_numbers
 
+import "fmt"
+
 type Number interface {
 	int64 | float64
+}
+
+type Age interface {
+	int | float64
+}
+
+func newGenericFunc[A Age](age A) string {
+	return fmt.Sprint(age)
 }
 
 // SumNumbers sums the values of map m. It supports both integers

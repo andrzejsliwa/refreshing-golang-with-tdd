@@ -4,6 +4,21 @@ import (
 	"testing"
 )
 
+// func TestNewGenericFunc(t *testing.T) {
+// 	t.Run("ints", func(t *testing.T) {
+// 		result := newGenericFunc(36)
+// 		if result != "36" {
+// 			t.Errorf("Wanted %v, got %v", 36, result)
+// 		}
+// 	})
+// 	t.Run("floats", func(t *testing.T) {
+// 		result := newGenericFunc(36.5)
+// 		if result != "36.5" {
+// 			t.Errorf("Wanted %v, got %v", 36, result)
+// 		}
+// 	})
+// }
+
 func TestSumNumbers(t *testing.T) {
 	t.Run("ints", func(t *testing.T) {
 		ints := map[string]int64{
